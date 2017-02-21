@@ -8,23 +8,23 @@ typedef unsigned char      BYTE;
 typedef int                BOOL;
 #define FALSE                0
 #define TRUE                 1
-#define NOCHESS 0    //æ²¡æœ‰æ£‹å­
-#define B_KING       1  //é»‘å¸…
-#define B_CAR        2  //é»‘è½¦
-#define B_HORSE      3  //é»‘é©¬
-#define B_CANON      4  //é»‘ç‚®
-#define B_BISHOP     5  //é»‘å£«
-#define B_ELEPHANT   6  //é»‘è±¡
-#define B_PAWN       7  //é»‘å’
+#define NOCHESS 0    //Ã»ÓÐÆå×Ó
+#define B_KING       1  //ºÚË§
+#define B_CAR        2  //ºÚ³µ
+#define B_HORSE      3  //ºÚÂí
+#define B_CANON      4  //ºÚÅÚ
+#define B_BISHOP     5  //ºÚÊ¿
+#define B_ELEPHANT   6  //ºÚÏó
+#define B_PAWN       7  //ºÚ×ä
 #define B_BEGIN      B_KING
 #define B_END        B_PAWN
-#define R_KING       8   //çº¢å¸…
-#define R_CAR        9   //çº¢è½¦
-#define R_HORSE      10  //çº¢é©¬
-#define R_CANON      11  //çº¢ç‚®
-#define R_BISHOP     12  //çº¢å£«
-#define R_ELEPHANT   13  //çº¢è±¡
-#define R_PAWN       14  //çº¢å…µ
+#define R_KING       8   //ºìË§
+#define R_CAR        9   //ºì³µ
+#define R_HORSE      10  //ºìÂí
+#define R_CANON      11  //ºìÅÚ
+#define R_BISHOP     12  //ºìÊ¿
+#define R_ELEPHANT   13  //ºìÏó
+#define R_PAWN       14  //ºì±ø
 #define R_BEGIN      R_KING
 #define R_END        R_PAWN
 #define IsBlack(x)  (x>=B_BEGIN&&x<=B_END)
@@ -50,12 +50,12 @@ class Cqishou
 {
   public:
         char            m_ptcName[50];
-        int             m_iChessMoveFrom;               //æ£‹æ‰‹ç±»åž‹ï¼ˆèµ°æ­¥æ¥æºï¼‰ï¼š0-å¼•æ“Žï¼›1ã€2-ä»Žå…¶å®ƒè¿›ç¨‹ä¸­èŽ·å–ï¼ˆæ–‡å­—æˆ–å›¾åƒï¼‰ï¼›3ã€4-è¾“å…¥ï¼ˆé”®ç›˜æˆ–é¼ æ ‡æˆ–å£°éŸ³ï¼‰ï¼›5ï¼ç½‘ç»œç­‰å…¶å®ƒé€”å¾„
+        int             m_iChessMoveFrom;               //ÆåÊÖÀàÐÍ£¨×ß²½À´Ô´£©£º0-ÒýÇæ£»1¡¢2-´ÓÆäËü½ø³ÌÖÐ»ñÈ¡£¨ÎÄ×Ö»òÍ¼Ïñ£©£»3¡¢4-ÊäÈë£¨¼üÅÌ»òÊó±ê»òÉùÒô£©£»5£­ÍøÂçµÈÆäËüÍ¾¾¶
         bool            m_bProgBottom;                  //if computer above prog
         bool            m_bQiShouRed;                   // if red
         bool            m_bQiShouBottom;                //if i am bottom in  NewQiJu
-        bool            m_bUseOpenBook;                 //æ˜¯å¦ä½¿ç”¨å¼€å±€åº“
-        bool            m_forbid;                         //æ˜¯å¦çŠ¯è§„ ï¼Œæ¯”å¦‚å¾ªçŽ¯å°†å†›
+        bool            m_bUseOpenBook;                 //ÊÇ·ñÊ¹ÓÃ¿ª¾Ö¿â
+        bool            m_forbid;                         //ÊÇ·ñ·¸¹æ £¬±ÈÈçÑ­»·½«¾ü
         bool            m_bookfind;                       // if find move in openbook?
 
         CUcci           m_ucci;
@@ -85,18 +85,18 @@ class Cqishou
 
         BYTE            m_dx;
         BYTE            m_dy;
-        BYTE            m_iDI;                          //åˆ†è¾¨çŽ‡
-        unsigned long int             m_iDD;                          //è¯¯å·®
+        BYTE            m_iDI;                          //·Ö±æÂÊ
+        unsigned long int             m_iDD;                          //Îó²î
         BYTE            m_position[10][9];
-        long int        m_scores;                         //å¾—åˆ†
+        long int        m_scores;                         //µÃ·Ö
         CHESSMOVE       m_cmQiShouStep;
-        CHESSMOVE       m_cmMyHistroyMove[6];           //æˆ‘çš„åŽ†å²èµ°æ­¥
+        CHESSMOVE       m_cmMyHistroyMove[6];           //ÎÒµÄÀúÊ·×ß²½
 
         int             m_iFirstTime;
-        int             m_iFirstSteps;                  //ç¬¬ä¸€æ—¶é™ï¼šå…± m_iFirstTimeåˆ†é’Ÿï¼Œå¿…é¡»èµ°æ»¡m_iFirstStepsæ­¥
+        int             m_iFirstSteps;                  //µÚÒ»Ê±ÏÞ£º¹² m_iFirstTime·ÖÖÓ£¬±ØÐë×ßÂúm_iFirstSteps²½
         int             m_iSecondTime;
-        int             m_iSecondSteps;                 //ç¬¬äºŒæ—¶é™ï¼šç¬¬m_iSecondTimeåˆ†é’Ÿèµ°m_iSecondStempsæ­¥
-        int             m_iTotalTimes;                  //æ€»ç”¨æ—¶
+        int             m_iSecondSteps;                 //µÚ¶þÊ±ÏÞ£ºµÚm_iSecondTime·ÖÖÓ×ßm_iSecondStemps²½
+        int             m_iTotalTimes;                  //×ÜÓÃÊ±
 
         HWND            FindWinBoardAndSteps(int maxparent, char winclass[10][254],char winname[10][254]);
         bool            Go(CHESSMOVE cmQiJuMove, bool bBottomGo);
@@ -119,12 +119,12 @@ class  Cnewqiju
 	        BYTE            m_ChessBoard[10][9];
                 bool            m_bBottomGo;
                 CHESSMOVE       m_cmQiJuMove;
-                CHESSMOVE       m_cmQiPu[200];                  //æœ¬å±€æ£‹è°±    æœ€é•¿200æ­¥
+                CHESSMOVE       m_cmQiPu[200];                  //±¾¾ÖÆåÆ×    ×î³¤200²½
                 WCHAR           m_wsQiJuMove[8];                //
 
-                WCHAR           m_wsBestMove[5];                //å½“å‰æœ€å¥½èµ°æ­¥çš„ä¸­å›½å¼è¡¨ç¤ºæ³•
-                WCHAR           m_wsBetterMove[5];              //å½“å‰æ¬¡å¥½èµ°æ­¥çš„ä¸­å›½å¼è¡¨ç¤ºæ³•
-                WCHAR           m_wsGoodMove[5];                //å½“å‰å¥½èµ°æ­¥çš„ä¸­å›½å¼è¡¨ç¤ºæ³•
+                WCHAR           m_wsBestMove[5];                //µ±Ç°×îºÃ×ß²½µÄÖÐ¹úÊ½±íÊ¾·¨
+                WCHAR           m_wsBetterMove[5];              //µ±Ç°´ÎºÃ×ß²½µÄÖÐ¹úÊ½±íÊ¾·¨
+                WCHAR           m_wsGoodMove[5];                //µ±Ç°ºÃ×ß²½µÄÖÐ¹úÊ½±íÊ¾·¨
 
                 char            m_cStepBuff[20];
 	        int             m_iTurn;
@@ -138,15 +138,15 @@ class  Cnewqiju
                         int year;
                         int month;
                         int day;
-                        }  m_asChessDate ;              //æ¯”èµ›æ—¥æœŸ
+                        }  m_asChessDate ;              //±ÈÈüÈÕÆÚ
                 struct {
                         int hour;
                         int minitue;
                         int second;
-                        }  m_asChessTime;               //æ¯”èµ›æ—¶é—´
-                char m_asChessaddress[];                //æ¯”èµ›åœ°ç‚¹
-                char m_asChessName[];                   //æ¯”èµ›åç§°
-                BYTE result;                            //æ¯”èµ›ç»“æžœ
+                        }  m_asChessTime;               //±ÈÈüÊ±¼ä
+                char m_asChessaddress[];                //±ÈÈüµØµã
+                char m_asChessName[];                   //±ÈÈüÃû³Æ
+                BYTE result;                            //±ÈÈü½á¹û
 
 
                 void            WCHAR2CHESSMOVE(WCHAR wsChessMove[5], CHESSMOVE &cmChessMove );
@@ -171,7 +171,7 @@ class  Cnewqiju
                 BYTE *           PasteJuMian(char FenStr[2054]);
 
 //                CSearchEngine   *m_pSE;
-		BYTE            computerthink();		        //æ ¹æ®å½“å‰æ³•èµ°ä¸€æ­¥æ£‹
+		BYTE            computerthink();		        //¸ù¾Ýµ±Ç°·¨×ßÒ»²½Æå
 
 	        Cnewqiju();
                 ~Cnewqiju();

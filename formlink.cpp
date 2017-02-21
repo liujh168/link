@@ -537,7 +537,7 @@ void __fastcall TMainForm::btnresetClick(TObject *Sender)
 
 
 HBITMAP TMainForm::copyscreentobitmap(Cqishou & player)
-//lprect ä»£è¡¨é€‰å®šåŒºåŸŸ
+//lprect ´ú±íÑ¡¶¨ÇøÓò
 {
       TRect MyRect ;
       int width,height;
@@ -564,7 +564,7 @@ HBITMAP TMainForm::copyscreentobitmap(Cqishou & player)
       MyRect.Right = width;
       MyRect.Bottom = height;
 
-     if (IsRectEmpty(&MyRect))    // ç¡®ä¿é€‰å®šåŒºåŸŸä¸ä¸ºç©ºçŸ©å½¢
+     if (IsRectEmpty(&MyRect))    // È·±£Ñ¡¶¨ÇøÓò²»Îª¿Õ¾ØÐÎ
               return NULL;
 
      HDC MyDC = GetWindowDC(player.m_hWndBoard);
@@ -587,7 +587,7 @@ HBITMAP TMainForm::copyscreentobitmap(Cqishou & player)
 
      delete MyCanvas;
      delete MyBmp;
-     return player.m_hbitmap;     // è¿”å›žä½å›¾å¥æŸ„
+     return player.m_hbitmap;     // ·µ»ØÎ»Í¼¾ä±ú
 }
 
 
@@ -604,7 +604,7 @@ void __fastcall TMainForm::tmr1Timer(TObject *Sender)
                MainForm->Caption =  grptop->Caption + "Go! (Top)";
         }
 
-        if(! myqiju.m_bConnected )      //æœªå¼€å§‹æ—¶
+        if(! myqiju.m_bConnected )      //Î´¿ªÊ¼Ê±
         {
                 if( myqiju.m_WhichPlayer->GetBMPBoard() == NULL )
                 {
@@ -785,11 +785,11 @@ void    TMainForm::copymyqijutoform()
 //
 //       if( myqiju.m_PlayerTop.m_bQiShouRed && !myqiju.m_PlayerBottom.m_bQiShouRed )
 //       {
-//            chkred->Checked=false   ;     //æœ¬æ¬¡è®¾ç½®ä¼šå¼•å‘chkred clickäº‹ä»¶ï¼
+//            chkred->Checked=false   ;     //±¾´ÎÉèÖÃ»áÒý·¢chkred clickÊÂ¼þ£¡
 //       }
 //       else if( ! myqiju.m_PlayerTop.m_bQiShouRed && myqiju.m_PlayerBottom.m_bQiShouRed )
 //       {
-//         chkred->Checked=true   ;          //æœ¬æ¬¡è®¾ç½®ä¼šå¼•å‘chkred clickäº‹ä»¶ï¼
+//         chkred->Checked=true   ;          //±¾´ÎÉèÖÃ»áÒý·¢chkred clickÊÂ¼þ£¡
 //       }
 //       else
 //       {
@@ -847,7 +847,7 @@ void __fastcall TMainForm::FormActivate(TObject *Sender)
 void __fastcall TMainForm::Help1Click(TObject *Sender)
 {
         AnsiString StrTitle = Application->Title;
-        AnsiString StrContent = "æ— ä¸ºå·¥ä½œå°ç»„ï¼Œç‰ˆæƒæ‰€æœ‰";
+        AnsiString StrContent = "ÎÞÎª¹¤×÷Ð¡×é£¬°æÈ¨ËùÓÐ";
         ShellAbout(MainForm->Handle,StrTitle.c_str(),StrContent.c_str(),Application->Icon->Handle);        
 }
 //---------------------------------------------------------------------------
@@ -1032,7 +1032,7 @@ void __fastcall TMainForm::actopenExecute(TObject *Sender)
 
        myqiju.m_PlayerTop.m_hWndProg = FindWindow(NULL, myqiju.m_PlayerTop.m_ptcName);
 
-       if( myqiju.m_PlayerTop.m_hWndProg == FindWindow(NULL, "ä¸­å›½è±¡æ£‹ ï¼ˆå•æœºç‰ˆï¼‰ ") )
+       if( myqiju.m_PlayerTop.m_hWndProg == FindWindow(NULL, "ÖÐ¹úÏóÆå £¨µ¥»ú°æ£© ") )
        {
 
               hLastWin = FindWindowEx(myqiju.m_PlayerTop.m_hWndProg, NULL, "AfxMDIFrame42", "");
@@ -1049,7 +1049,7 @@ void __fastcall TMainForm::actopenExecute(TObject *Sender)
               };
               char *A_szWinName[MyMaxParentWinCount] =
               {
-                  "ä¸­å›½è±¡æ£‹ ï¼ˆå•æœºç‰ˆï¼‰ ",
+                  "ÖÐ¹úÏóÆå £¨µ¥»ú°æ£© ",
                   "",
                   "",
                   "",
@@ -1078,14 +1078,14 @@ void __fastcall TMainForm::actopenExecute(TObject *Sender)
 
 
        myqiju.m_PlayerBottom.m_hWndProg = FindWindow(NULL, myqiju.m_PlayerBottom.m_ptcName);
-       if( myqiju.m_PlayerBottom.m_hWndProg == FindWindow("TApplication", "æ¥šæ±‰æ£‹ç¼˜1.46") )
+       if( myqiju.m_PlayerBottom.m_hWndProg == FindWindow("TApplication", "³þººÆåÔµ1.46") )
         {    // inline suport globall
 
               HWND hChessForm;
               HWND hLastWin ,hLastWin1 ;
               HWND hWndSteps,hWndBoard;
 
-              hChessForm  = FindWindow("TChessForm","æ¥šæ±‰æ£‹ç¼˜1.46æ³¨å†Œç‰ˆ");
+              hChessForm  = FindWindow("TChessForm","³þººÆåÔµ1.46×¢²á°æ");
               hLastWin = FindWindowEx(hChessForm, NULL, "TPanel", "");
               while(hLastWin != NULL)
               {
@@ -1107,9 +1107,9 @@ void __fastcall TMainForm::actopenExecute(TObject *Sender)
               myqiju.m_PlayerBottom.m_hWndSteps =   hWndSteps ;
 
         }
-        else if(myqiju.m_PlayerBottom.m_hWndProg == FindWindow("TApplication", "æ¥šæ±‰æ£‹ç¼˜V1.42" ))
+        else if(myqiju.m_PlayerBottom.m_hWndProg == FindWindow("TApplication", "³þººÆåÔµV1.42" ))
         {
-              HWND hChessForm = FindWindow("TChessForm","æ¥šæ±‰æ£‹ç¼˜1.42ç‰ˆï¼ˆæœªæ³¨å†Œï¼‰" ) ;
+              HWND hChessForm = FindWindow("TChessForm","³þººÆåÔµ1.42°æ£¨Î´×¢²á£©" ) ;
               HWND hLastWin1 = FindWindowEx(hChessForm, NULL, "TPanel", "");
               HWND hLastWin2 = FindWindowEx(hChessForm, hLastWin1, "TPanel", "");
               HWND hLastWin3 = FindWindowEx(hChessForm, NULL, "TComboBox", "");
@@ -1172,7 +1172,7 @@ void __fastcall TMainForm::actcontisameExecute(TObject *Sender)
 //        myqiju.m_bConnected=true;
 //        tmr1->Enabled=true;
 //
-        if( Application->MessageBox("from top to bottomï¼Ÿ","my dearï¼",MB_YESNO) == IDYES )
+        if( Application->MessageBox("from top to bottom£¿","my dear£¡",MB_YESNO) == IDYES )
         {
           myqiju.ContiSame(myqiju.m_PlayerBottom, myqiju.m_PlayerTop);
         }
@@ -1252,15 +1252,15 @@ void __fastcall TMainForm::actcheckExecute(TObject *Sender)
 void __fastcall TMainForm::mniTopBoardImage1Click(TObject *Sender)
 {
         myqiju.m_PlayerTop.GetBMPBoard();
-//        if (OpenClipboard(this->Handle))    //m_hWndBoardä¸ºç¨‹åºçª—å£å¥æŸ„
+//        if (OpenClipboard(this->Handle))    //m_hWndBoardÎª³ÌÐò´°¿Ú¾ä±ú
 //        {
 //
-//              EmptyClipboard();   //æ¸…ç©ºå‰ªè´´æ¿
+//              EmptyClipboard();   //Çå¿Õ¼ôÌù°å
 //
 //
-//              SetClipboardData( CF_BITMAP, myqiju.m_PlayerTop.m_hbitmap);     //æŠŠå±å¹•å†…å®¹ç²˜è´´åˆ°å‰ªè´´æ¿ä¸Š,  hbitmap ä¸ºåˆšæ‰çš„å±å¹•ä½å›¾å¥æŸ„
+//              SetClipboardData( CF_BITMAP, myqiju.m_PlayerTop.m_hbitmap);     //°ÑÆÁÄ»ÄÚÈÝÕ³Ìùµ½¼ôÌù°åÉÏ,  hbitmap Îª¸Õ²ÅµÄÆÁÄ»Î»Í¼¾ä±ú
 //
-//              CloseClipboard();  //å…³é—­å‰ªè´´æ¿
+//              CloseClipboard();  //¹Ø±Õ¼ôÌù°å
 //        }
 //       imgtemp->Picture->Bitmap->Handle = myqiju.m_PlayerTop.m_hbitmap;
 
@@ -1270,15 +1270,15 @@ void __fastcall TMainForm::mniTopBoardImage1Click(TObject *Sender)
 void __fastcall TMainForm::mniBottomBoardImage1Click(TObject *Sender)
 {
         myqiju.m_PlayerBottom.GetBMPBoard();
-//        if (OpenClipboard(this->Handle))    //m_hWndBoardä¸ºç¨‹åºçª—å£å¥æŸ„
+//        if (OpenClipboard(this->Handle))    //m_hWndBoardÎª³ÌÐò´°¿Ú¾ä±ú
 //        {
 //
-//              EmptyClipboard();   //æ¸…ç©ºå‰ªè´´æ¿
+//              EmptyClipboard();   //Çå¿Õ¼ôÌù°å
 //
 //
-//              SetClipboardData( CF_BITMAP, myqiju.m_PlayerBottom.m_hbitmap);     //æŠŠå±å¹•å†…å®¹ç²˜è´´åˆ°å‰ªè´´æ¿ä¸Š,  hbitmap ä¸ºåˆšæ‰çš„å±å¹•ä½å›¾å¥æŸ„
+//              SetClipboardData( CF_BITMAP, myqiju.m_PlayerBottom.m_hbitmap);     //°ÑÆÁÄ»ÄÚÈÝÕ³Ìùµ½¼ôÌù°åÉÏ,  hbitmap Îª¸Õ²ÅµÄÆÁÄ»Î»Í¼¾ä±ú
 //
-//              CloseClipboard();  //å…³é—­å‰ªè´´æ¿
+//              CloseClipboard();  //¹Ø±Õ¼ôÌù°å
 //        }
 //       imgtemp->Picture->Bitmap->Handle = myqiju.m_PlayerBottom.m_hbitmap;
 }
@@ -1400,7 +1400,7 @@ void __fastcall TMainForm::actStopExecute(TObject *Sender)
 //---------------------------------------------------------------------------
 void __fastcall TMainForm::GetWindowMinMaxInfo(TWMGetMinMaxInfo& Message)
 {
-        //è®¾ç½®ä¸»çª—å£çš„æœ€å°å°ºå¯¸
+        //ÉèÖÃÖ÷´°¿ÚµÄ×îÐ¡³ß´ç
 //      MINMAXINFO * MinMaxInfo=Message.MinMaxInfo;
       Message.MinMaxInfo->ptMaxSize.x=this->Width;
       Message.MinMaxInfo->ptMaxSize.y=this->Height;

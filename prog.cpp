@@ -239,7 +239,7 @@ BOOL Cnewqiju ::GetQiShouMove(Cqishou * player)
       // this function get the qishou Move in different way
       //          check if size of board changed ?
       //////////////////////////////////////////////////////////////////////////////////
-      ///é€šè¿‡å¼•æ“è®¡ç®—è·å–èµ·æ­¥
+      ///Í¨¹ıÒıÇæ¼ÆËã»ñÈ¡Æğ²½
        if( !player->m_iChessMoveFrom )
        {
              player->m_ucci.pipeEngine.LineInput(player->m_ucci.szLineStr);
@@ -266,7 +266,7 @@ BOOL Cnewqiju ::GetQiShouMove(Cqishou * player)
                  player->m_cmQiShouStep.To.x = x2;
                  player->m_cmQiShouStep.To.y = y2;
                  m_cmQiJuMove=player->m_cmQiShouStep;
-                 // åº”è¯¥å¢åŠ æ£€æŸ¥åˆæ³•æ€§ä»£ç 
+                 // Ó¦¸ÃÔö¼Ó¼ì²éºÏ·¨ĞÔ´úÂë
                  return true;
 
              }
@@ -276,12 +276,12 @@ BOOL Cnewqiju ::GetQiShouMove(Cqishou * player)
              }
 
        }
-      //é€šè¿‡è¾“å…¥ï¼ˆé”®ç›˜æˆ–é¼ æ ‡ï¼‰è·å–èµ·æ­¥
+      //Í¨¹ıÊäÈë£¨¼üÅÌ»òÊó±ê£©»ñÈ¡Æğ²½
 
-      ///////////////////////////////////////å¦‚æœèƒ½ç›´æ¥è·å–æ–‡å­—æè¿°çš„èµ·æ­¥ï¼Œåˆ™ç›´æ¥è½¬åŒ–æˆCCHESSMOVE
+      ///////////////////////////////////////Èç¹ûÄÜÖ±½Ó»ñÈ¡ÎÄ×ÖÃèÊöµÄÆğ²½£¬ÔòÖ±½Ó×ª»¯³ÉCCHESSMOVE
       if(player->m_hWndSteps != NULL)
       {
-            if(!strcmp(player->m_ptcName,"è±¡æ£‹ä¸–å®¶V5 - 91042"))
+            if(!strcmp(player->m_ptcName,"ÏóÆåÊÀ¼ÒV5 - 91042"))
             {
                 char * pchar = MyGetListViewItem(player);
 
@@ -345,7 +345,7 @@ BOOL Cnewqiju ::GetQiShouMove(Cqishou * player)
                   {
                      if(m_wsQiJuMove[ii]!= space[0])
                      {
-                          wcstemp[kk]=m_wsQiJuMove[ii];    //remove " "    or "ã€€"
+                          wcstemp[kk]=m_wsQiJuMove[ii];    //remove " "    or "¡¡"
                           kk++;
                      }
                   }
@@ -368,7 +368,7 @@ BOOL Cnewqiju ::GetQiShouMove(Cqishou * player)
 
 
 //////////////////////////////////////////////////////////////////////////////////
-//å¦‚æœä¸èƒ½ç›´æ¥è·å–æ–‡å­—æè¿°çš„èµ·æ­¥ï¼Œåˆ™é€šè¿‡æ‰«æç›˜é¢å˜åŒ–è·å–èµ·æ­¥ã€‚
+//Èç¹û²»ÄÜÖ±½Ó»ñÈ¡ÎÄ×ÖÃèÊöµÄÆğ²½£¬ÔòÍ¨¹ıÉ¨ÃèÅÌÃæ±ä»¯»ñÈ¡Æğ²½¡£
       RECT  myrect;
       int width , height;
 
@@ -477,7 +477,7 @@ bool  Cqishou ::Go(CHESSMOVE cmQiJuMove, bool bBottomGo)
 
         if ( m_hWndSteps!=NULL )
         {
-            if(!strcmp( m_ptcName,"è±¡æ£‹ä¸–å®¶V5 - 91042"))
+            if(!strcmp( m_ptcName,"ÏóÆåÊÀ¼ÒV5 - 91042"))
             {
                   return true;
 
@@ -493,12 +493,12 @@ bool  Cqishou ::Go(CHESSMOVE cmQiJuMove, bool bBottomGo)
 
                   GetWindowThreadProcessId(hWindow,&dwProcessID);
                   hProcess=OpenProcess(PROCESS_ALL_ACCESS,FALSE,dwProcessID);
-                  if(!hProcess)  //å¾—ä¸åˆ°æŒ‡å®šè¿›ç¨‹çš„å¥æŸ„
+                  if(!hProcess)  //µÃ²»µ½Ö¸¶¨½ø³ÌµÄ¾ä±ú
                       return NULL;
-                  //åœ¨æŒ‡å®šè¿›ç¨‹å†…åˆ†é…å­˜å‚¨ç©ºé—´
+                  //ÔÚÖ¸¶¨½ø³ÌÄÚ·ÖÅä´æ´¢¿Õ¼ä
                   LPVOID lpTextRemote=VirtualAllocEx(hProcess,NULL,nMaxLen+1,MEM_COMMIT,PAGE_READWRITE);
                   LPVOID lpListItemRemote=VirtualAllocEx(hProcess,NULL,sizeof(LVITEM),MEM_COMMIT,PAGE_READWRITE);
-                  if((!lpTextRemote) || (!lpListItemRemote)) //ä¸èƒ½åœ¨æŒ‡å®šè¿›ç¨‹å†…åˆ†é…å­˜å‚¨ç©ºé—´
+                  if((!lpTextRemote) || (!lpListItemRemote)) //²»ÄÜÔÚÖ¸¶¨½ø³ÌÄÚ·ÖÅä´æ´¢¿Õ¼ä
                       return NULL;
 
 //                  nLVItemCount=ListView_GetItemCount(hWindow);
@@ -562,18 +562,18 @@ bool  Cqishou ::Go(CHESSMOVE cmQiJuMove, bool bBottomGo)
 
 void Cnewqiju :: WCHAR2CHESSMOVE(WCHAR wsChessMove[5], CHESSMOVE &cmChessMove )
 {
-    WCHAR * qian = L"å‰" ;
-    WCHAR * hou = L"å" ;
-    WCHAR * jing = L"è¿›" ;
-    WCHAR * tui  =  L"é€€" ;
-    WCHAR * ping = L"å¹³" ;
-    //WCHAR   qizi[]=L"ç©ºå°†è½¦é©¬ç‚®å£«è±¡å’å¸…è½¦é©¬ç‚®ä»•ç›¸å…µ" ;
-    WCHAR   qizi[]=L"ç©ºå°†è½¦é©¬ç‚®å£«è±¡å’å¸…è½¦é©¬ç‚®å£«ç›¸å…µ" ;
+    WCHAR * qian = L"Ç°" ;
+    WCHAR * hou = L"ºó" ;
+    WCHAR * jing = L"½ø" ;
+    WCHAR * tui  =  L"ÍË" ;
+    WCHAR * ping = L"Æ½" ;
+    //WCHAR   qizi[]=L"¿Õ½«³µÂíÅÚÊ¿Ïó×äË§³µÂíÅÚÊËÏà±ø" ;
+    WCHAR   qizi[]=L"¿Õ½«³µÂíÅÚÊ¿Ïó×äË§³µÂíÅÚÊ¿Ïà±ø" ;
     WCHAR   weiziblack[]=L"123456789" ;
-    WCHAR   weiziblackq[]=L"ï¼‘ï¼’ï¼“ï¼”ï¼•ï¼–ï¼—ï¼˜ï¼™" ;
-    WCHAR   weizired[]=L"ä¸€äºŒä¸‰å››äº”å…­ä¸ƒå…«ä¹" ;
+    WCHAR   weiziblackq[]=L"£±£²£³£´£µ£¶£·£¸£¹" ;
+    WCHAR   weizired[]=L"Ò»¶şÈıËÄÎåÁùÆß°Ë¾Å" ;
     bool    Red;
-    WCHAR   shi[10]=L"ä»•å£«";
+    WCHAR   shi[10]=L"ÊËÊ¿";
 
     int     ChessID = NOCHESS ;
     int     x1,y1,x2,y2 ;
@@ -915,19 +915,19 @@ int Cnewqiju :: IsGameOver(BYTE position[10][9])
 
 void Cnewqiju :: CHESSMOVE2WCHAR(CHESSMOVE cmChessMove , WCHAR wsChessMove[5])
 {
-   /* WCHAR *qian=L"å‰" ;
-    WCHAR *hou=L"å" ;
+   /* WCHAR *qian=L"Ç°" ;
+    WCHAR *hou=L"ºó" ;
 
     WCHAR * qizi ;
     WCHAR * weizi ;
-    WCHAR qiziblack[]=L"ç©ºå°†è½¦é©¬ç‚®å£«è±¡å’å¸…è½¦é©¬ç‚®ä»•ç›¸å…µ" ;
-    WCHAR weiziblack[]=L"ï¼‘ï¼’ï¼“ï¼”ï¼•ï¼–ï¼—ï¼˜ï¼™" ;
-    WCHAR qizired[]=L"ç©ºå¸…è½¦é©¬ç‚®ä»•ç›¸å…µå°†è½¦é©¬ç‚®å£«è±¡å’" ;
-    WCHAR weizired[]=L"ä¸€äºŒä¸‰å››äº”å…­ä¸ƒå…«ä¹" ;
+    WCHAR qiziblack[]=L"¿Õ½«³µÂíÅÚÊ¿Ïó×äË§³µÂíÅÚÊËÏà±ø" ;
+    WCHAR weiziblack[]=L"£±£²£³£´£µ£¶£·£¸£¹" ;
+    WCHAR qizired[]=L"¿ÕË§³µÂíÅÚÊËÏà±ø½«³µÂíÅÚÊ¿Ïó×ä" ;
+    WCHAR weizired[]=L"Ò»¶şÈıËÄÎåÁùÆß°Ë¾Å" ;
 
-    WCHAR *jing=L"è¿›" ;
-    WCHAR *tui=L"é€€" ;
-    WCHAR *ping=L"å¹³" ;
+    WCHAR *jing=L"½ø" ;
+    WCHAR *tui=L"ÍË" ;
+    WCHAR *ping=L"Æ½" ;
     wsChessMove[4]=0x0000;
     int x1,y1,x2,y2 ;
     int ChessID ;
@@ -979,19 +979,19 @@ void Cnewqiju :: CHESSMOVE2WCHAR(CHESSMOVE cmChessMove , WCHAR wsChessMove[5])
     // _itow(x1+1, &wsChessMove[1], 10);
     if(y1==y2)
     {
-        wcscpy(&wsChessMove[2],L"å¹³");
+        wcscpy(&wsChessMove[2],L"Æ½");
         wsChessMove[3]=weizi[x2];
     }
     else
     {
         if(y1<y2)
         {
-            wcscpy(&wsChessMove[2],L"è¿›");
+            wcscpy(&wsChessMove[2],L"½ø");
 
         }
         if(y1>y2)
         {
-            wcscpy(&wsChessMove[2],L"é€€");
+            wcscpy(&wsChessMove[2],L"ÍË");
         }
         switch(ChessID)
         {
@@ -1024,12 +1024,12 @@ void Cnewqiju :: CHESSMOVE2WCHAR(CHESSMOVE cmChessMove , WCHAR wsChessMove[5])
 
     if( x1<0 ||x1>8 || y1<0 || y1>9 || x2<0 ||x2>8 || y2<0 || y2>9 )
     {
-      wcscpy(wsChessMove,L"å‡ºç•Œäº†å•Š");
+      wcscpy(wsChessMove,L"³ö½çÁË°¡");
       return 0;
     }
     if( ChessID ==NOCHESS )
     {
-      wcscpy(wsChessMove,L"è¯¥ä½æ— å­");
+      wcscpy(wsChessMove,L"¸ÃÎ»ÎŞ×Ó");
       return 0;
     }
     wsChessMove[0]=qizi[ChessID];
@@ -1056,19 +1056,19 @@ void Cnewqiju :: CHESSMOVE2WCHAR(CHESSMOVE cmChessMove , WCHAR wsChessMove[5])
     // _itow(x1+1, &wsChessMove[1], 10);
     if(y1==y2)
     {
-        wcscpy(&wsChessMove[2],L"å¹³");
+        wcscpy(&wsChessMove[2],L"Æ½");
         wsChessMove[3]=weizi[x2];
     }
     else
     {
         if(y1<y2)
         {
-            wcscpy(&wsChessMove[2],L"è¿›");
+            wcscpy(&wsChessMove[2],L"½ø");
 
         }
         if(y1>y2)
         {
-            wcscpy(&wsChessMove[2],L"é€€");
+            wcscpy(&wsChessMove[2],L"ÍË");
         }
         switch(ChessID)
         {
@@ -1200,7 +1200,7 @@ bool Cnewqiju::GetFromFile(char * filename)
 void Cnewqiju ::Start()
 {
 
-      while( m_bConnected )         ///å¤šçº¿ç¨‹è¿è¡Œæ—¶ä¸èƒ½é‡å…¥VCLï¼Œé™¤é.....
+      while( m_bConnected )         ///¶àÏß³ÌÔËĞĞÊ±²»ÄÜÖØÈëVCL£¬³ı·Ç.....
       {
           Application->ProcessMessages();
 
@@ -1266,7 +1266,7 @@ void Cnewqiju::UnMakeMove(CHESSMOVE* move,BYTE nChessID)
 
 HWND Cqishou ::FindWinBoardAndSteps(int maxparent, char winclass[10][254],char winname[10][254])
 {
-//     é¦–å…ˆæ±‚å¾—é¡¶çº§çˆ¶çª—å£
+//     Ê×ÏÈÇóµÃ¶¥¼¶¸¸´°¿Ú
     HWND   grandfather, parent,child;
 
 //    strcpy(m_ptcName,&winname[maxparent][0]);
@@ -1297,7 +1297,7 @@ HWND Cqishou ::FindWinBoardAndSteps(int maxparent, char winclass[10][254],char w
         return  parent ;
     }
     child = FindWindowEx(parent ,NULL, &winclass[maxparent-2][0], &winname[maxparent-2][0]);
-//     é€æ¬¡ç”¨FindWindowExå‡½æ•°æ±‚å‡ºå„çº§å­çª—å£,untill find window board
+//     Öğ´ÎÓÃFindWindowExº¯ÊıÇó³ö¸÷¼¶×Ó´°¿Ú,untill find window board
     if( maxparent-3<0 )
     {
         return  child ;
@@ -1328,18 +1328,18 @@ BOOL Cnewqiju::IsValidMove(BYTE position[10][9], int nFromX, int nFromY, int nTo
 	int nMoveChessID, nTargetID;
 	
 	if (nFromY ==  nToY && nFromX == nToX)
-		return FALSE;//ç›®çš„ä¸æºç›¸åŒ
+		return FALSE;//Ä¿µÄÓëÔ´ÏàÍ¬
 	
 	nMoveChessID = position[nFromY][nFromX];
 	nTargetID = position[nToY][nToX];
 	
 	if (IsSameSide(nMoveChessID, nTargetID))
-		return FALSE;//ä¸èƒ½åƒè‡ªå·±çš„æ£‹
+		return FALSE;//²»ÄÜ³Ô×Ô¼ºµÄÆå
 	
 	switch(nMoveChessID)
 	{
 	case B_KING:     
-		if (nTargetID == R_KING)//è€å°†è§é¢?
+		if (nTargetID == R_KING)//ÀÏ½«¼ûÃæ?
 		{
 			if (nFromX != nToX)
 				return FALSE;
@@ -1350,98 +1350,98 @@ BOOL Cnewqiju::IsValidMove(BYTE position[10][9], int nFromX, int nFromY, int nTo
 		else
 		{
 			if (nToY > 2 || nToX > 5 || nToX < 3)
-				return FALSE;//ç›®æ ‡ç‚¹åœ¨ä¹å®«ä¹‹å¤–
+				return FALSE;//Ä¿±êµãÔÚ¾Å¹¬Ö®Íâ
 			if(abs(nFromY - nToY) + abs(nToX - nFromX) > 1)
-				return FALSE;//å°†å¸…åªèµ°ä¸€æ­¥ç›´çº¿:
+				return FALSE;//½«Ë§Ö»×ßÒ»²½Ö±Ïß:
 		}
 		break;
 	case R_BISHOP:   
 		
 		if (nToY < 7 || nToX > 5 || nToX < 3)
-			return FALSE;//å£«å‡ºä¹å®«	
+			return FALSE;//Ê¿³ö¾Å¹¬	
 		
 		if (abs(nFromY - nToY) != 1 || abs(nToX - nFromX) != 1)
-			return FALSE;	//å£«èµ°æ–œçº¿
+			return FALSE;	//Ê¿×ßĞ±Ïß
 		
 		break;
 		
-	case B_BISHOP:   //é»‘å£«
+	case B_BISHOP:   //ºÚÊ¿
 
 		if (nToY > 2 || nToX > 5 || nToX < 3)
-			return FALSE;//å£«å‡ºä¹å®«	
+			return FALSE;//Ê¿³ö¾Å¹¬	
 		
 		if (abs(nFromY - nToY) != 1 || abs(nToX - nFromX) != 1)
-			return FALSE;	//å£«èµ°æ–œçº¿
+			return FALSE;	//Ê¿×ßĞ±Ïß
 		
 		break;
 		
-	case R_ELEPHANT://çº¢è±¡
+	case R_ELEPHANT://ºìÏó
 		
 		if(nToY < 5)
-			return FALSE;//ç›¸ä¸èƒ½è¿‡æ²³
+			return FALSE;//Ïà²»ÄÜ¹ıºÓ
 		
 		if(abs(nFromX-nToX) != 2 || abs(nFromY-nToY) != 2)
-			return FALSE;//ç›¸èµ°ç”°å­—
+			return FALSE;//Ïà×ßÌï×Ö
 
 		if(position[(nFromY + nToY) / 2][(nFromX + nToX) / 2] != NOCHESS)
-			return FALSE;//ç›¸çœ¼è¢«å¡ä½äº†
+			return FALSE;//ÏàÑÛ±»Èû×¡ÁË
 		
 		break;
 		
-	case B_ELEPHANT://é»‘è±¡ 
+	case B_ELEPHANT://ºÚÏó 
 		
 		if(nToY > 4)
-			return FALSE;//ç›¸ä¸èƒ½è¿‡æ²³
+			return FALSE;//Ïà²»ÄÜ¹ıºÓ
 		
 		if(abs(nFromX-nToX) != 2 || abs(nFromY-nToY) != 2)
-			return FALSE;//ç›¸èµ°ç”°å­—
+			return FALSE;//Ïà×ßÌï×Ö
 
 		if(position[(nFromY + nToY) / 2][(nFromX + nToX) / 2] != NOCHESS)
-			return FALSE;//ç›¸çœ¼è¢«å¡ä½äº†
+			return FALSE;//ÏàÑÛ±»Èû×¡ÁË
 		
 		break;
 		
-	case B_PAWN:     //é»‘å…µ
+	case B_PAWN:     //ºÚ±ø
 		
 		if(nToY < nFromY)
-			return FALSE;//å…µä¸å›å¤´
+			return FALSE;//±ø²»»ØÍ·
 		
 		if( nFromY < 5 && nFromY == nToY)
-			return FALSE;//å…µè¿‡æ²³å‰åªèƒ½ç›´èµ°
+			return FALSE;//±ø¹ıºÓÇ°Ö»ÄÜÖ±×ß
 		
 		if(nToY - nFromY + abs(nToX - nFromX) > 1)
-			return FALSE;//å…µåªèµ°ä¸€æ­¥ç›´çº¿:
+			return FALSE;//±øÖ»×ßÒ»²½Ö±Ïß:
 		
 		break;
 		
-	case R_PAWN:    //çº¢å…µ
+	case R_PAWN:    //ºì±ø
 		
 		if(nToY > nFromY)
-			return FALSE;//å…µä¸å›å¤´
+			return FALSE;//±ø²»»ØÍ·
 		
 		if( nFromY > 4 && nFromY == nToY)
-			return FALSE;//å…µè¿‡æ²³å‰åªèƒ½ç›´èµ°
+			return FALSE;//±ø¹ıºÓÇ°Ö»ÄÜÖ±×ß
 		
 		if(nFromY - nToY + abs(nToX - nFromX) > 1)
-			return FALSE;//å…µåªèµ°ä¸€æ­¥ç›´çº¿:
+			return FALSE;//±øÖ»×ßÒ»²½Ö±Ïß:
 
 		break;
 		
 	case R_KING:     
-		if (nTargetID == B_KING)//è€å°†è§é¢?
+		if (nTargetID == B_KING)//ÀÏ½«¼ûÃæ?
 		{
 			if (nFromX != nToX)
-				return FALSE;//ä¸¤ä¸ªå°†ä¸åœ¨åŒä¸€åˆ—
+				return FALSE;//Á½¸ö½«²»ÔÚÍ¬Ò»ÁĞ
 			for (i = nFromY - 1; i > nToY; i--)
 				if (position[i][nFromX] != NOCHESS)
-					return FALSE;//ä¸­é—´æœ‰åˆ«çš„å­
+					return FALSE;//ÖĞ¼äÓĞ±ğµÄ×Ó
 		}
 		else
 		{
 			if (nToY < 7 || nToX > 5 || nToX < 3)
-				return FALSE;//ç›®æ ‡ç‚¹åœ¨ä¹å®«ä¹‹å¤–
+				return FALSE;//Ä¿±êµãÔÚ¾Å¹¬Ö®Íâ
 			if(abs(nFromY - nToY) + abs(nToX - nFromX) > 1) 
-				return FALSE;//å°†å¸…åªèµ°ä¸€æ­¥ç›´çº¿:
+				return FALSE;//½«Ë§Ö»×ßÒ»²½Ö±Ïß:
 		}
 		break;
 		
@@ -1449,7 +1449,7 @@ BOOL Cnewqiju::IsValidMove(BYTE position[10][9], int nFromX, int nFromY, int nTo
 	case R_CAR:      
 		
 		if(nFromY != nToY && nFromX != nToX)
-			return FALSE;	//è½¦èµ°ç›´çº¿:
+			return FALSE;	//³µ×ßÖ±Ïß:
 		
 		if(nFromY == nToY)
 		{
@@ -1489,7 +1489,7 @@ BOOL Cnewqiju::IsValidMove(BYTE position[10][9], int nFromX, int nFromY, int nTo
 		
 		if(!((abs(nToX-nFromX)==1 && abs(nToY-nFromY)==2)
 			||(abs(nToX-nFromX)==2&&abs(nToY-nFromY)==1)))
-			return FALSE;//é©¬èµ°æ—¥å­—
+			return FALSE;//Âí×ßÈÕ×Ö
 		
 		if	(nToX-nFromX==2)
 		{
@@ -1513,7 +1513,7 @@ BOOL Cnewqiju::IsValidMove(BYTE position[10][9], int nFromX, int nFromY, int nTo
 		}
 
 		if(position[j][i] != NOCHESS)
-			return FALSE;//ç»Šé©¬è…¿
+			return FALSE;//°íÂíÍÈ
 		
 		break;
 	
@@ -1521,9 +1521,9 @@ BOOL Cnewqiju::IsValidMove(BYTE position[10][9], int nFromX, int nFromY, int nTo
 	case R_CANON:    
 		
 		if(nFromY!=nToY && nFromX!=nToX)
-			return FALSE;	//ç‚®èµ°ç›´çº¿:
+			return FALSE;	//ÅÚ×ßÖ±Ïß:
 		
-		//ç‚®ä¸åƒå­æ—¶ç»è¿‡çš„è·¯çº¿ä¸­ä¸èƒ½æœ‰æ£‹å­
+		//ÅÚ²»³Ô×ÓÊ±¾­¹ıµÄÂ·ÏßÖĞ²»ÄÜÓĞÆå×Ó
 		
 		if(position[nToY][nToX] == NOCHESS)
 		{
@@ -1558,7 +1558,7 @@ BOOL Cnewqiju::IsValidMove(BYTE position[10][9], int nFromX, int nFromY, int nTo
 				}
 			}
 		}
-		//ç‚®åƒå­æ—¶
+		//ÅÚ³Ô×ÓÊ±
 		else	
 		{
 			int count=0;
@@ -1613,24 +1613,24 @@ void Cnewqiju::ContiSame( Cqishou playerto , Cqishou  playerfrom)
 {
         memcpy(m_ChessBoard,playerfrom.m_position,90);     //position must be the same as BMP
 //        Copy JUmian
-        if (OpenClipboard(NULL))    //m_hWndBoardä¸ºç¨‹åºçª—å£å¥æŸ„
+        if (OpenClipboard(NULL))    //m_hWndBoardÎª³ÌĞò´°¿Ú¾ä±ú
         {
               char * p=NULL;
               p= CopyJuMian(m_ChessBoard , true );
 
-              DWORD dwLength = 2055; // è¦å¤åˆ¶çš„å­—ä¸²é•¿åº¦
-              HANDLE hGlobalMemory = GlobalAlloc(GHND, dwLength + 1); // åˆ†é…å†…å­˜
-              LPBYTE lpGlobalMemory = (LPBYTE)GlobalLock(hGlobalMemory); // é”å®šå†…å­˜
+              DWORD dwLength = 2055; // Òª¸´ÖÆµÄ×Ö´®³¤¶È
+              HANDLE hGlobalMemory = GlobalAlloc(GHND, dwLength + 1); // ·ÖÅäÄÚ´æ
+              LPBYTE lpGlobalMemory = (LPBYTE)GlobalLock(hGlobalMemory); // Ëø¶¨ÄÚ´æ
               lstrcpy(lpGlobalMemory,p);
-              ::EmptyClipboard(); // æ¸…ç©ºå‰ªè´´æ¿
-              ::SetClipboardData(CF_TEXT, hGlobalMemory); // å°†å†…å­˜ä¸­çš„æ•°æ®æ”¾ç½®åˆ°å‰ªè´´æ¿
-              GlobalUnlock(hGlobalMemory); // é”å®šå†…å­˜å—è§£é”
+              ::EmptyClipboard(); // Çå¿Õ¼ôÌù°å
+              ::SetClipboardData(CF_TEXT, hGlobalMemory); // ½«ÄÚ´æÖĞµÄÊı¾İ·ÅÖÃµ½¼ôÌù°å
+              GlobalUnlock(hGlobalMemory); // Ëø¶¨ÄÚ´æ¿é½âËø
 
-              HANDLE hClipMemory = ::GetClipboardData(CF_TEXT);// è·å–å‰ªè´´æ¿æ•°æ®å¥æŸ„
-              dwLength = GlobalSize(hClipMemory); // è¿”å›æŒ‡å®šå†…å­˜åŒºåŸŸçš„å½“å‰å¤§å°
-              LPBYTE lpClipMemory = (LPBYTE)GlobalLock(hClipMemory); // é”å®šå†…å­˜
-              GlobalUnlock(hClipMemory); // å†…å­˜è§£é”
-              ::CloseClipboard(); // å…³é—­å‰ªè´´æ¿
+              HANDLE hClipMemory = ::GetClipboardData(CF_TEXT);// »ñÈ¡¼ôÌù°åÊı¾İ¾ä±ú
+              dwLength = GlobalSize(hClipMemory); // ·µ»ØÖ¸¶¨ÄÚ´æÇøÓòµÄµ±Ç°´óĞ¡
+              LPBYTE lpClipMemory = (LPBYTE)GlobalLock(hClipMemory); // Ëø¶¨ÄÚ´æ
+              GlobalUnlock(hClipMemory); // ÄÚ´æ½âËø
+              ::CloseClipboard(); // ¹Ø±Õ¼ôÌù°å
 
         }
 //        NewGame();
@@ -1921,14 +1921,14 @@ bool     Cqishou::SaveBoardData(HBITMAP hbitmap)
 HBITMAP  Cqishou::GetBMPBoard()       //  hbitmap copyscreentobitmap(lprect lprect)
 {
         LPRECT          lprect;
-        HDC             hscrdc, hmemdc;             // å±å¹•å’Œå†…å­˜è®¾å¤‡æè¿°è¡¨
-        HBITMAP         hbitmap, holdbitmap;    // ä½å›¾å¥æŸ„
-        int             nx, ny, nx2, ny2;           // é€‰å®šåŒºåŸŸåæ ‡
-        int             nwidth, nheight;            // ä½å›¾å®½åº¦å’Œé«˜åº¦
-        int             xscrn, yscrn;               // å±å¹•åˆ†è¾¨ç‡
+        HDC             hscrdc, hmemdc;             // ÆÁÄ»ºÍÄÚ´æÉè±¸ÃèÊö±í
+        HBITMAP         hbitmap, holdbitmap;    // Î»Í¼¾ä±ú
+        int             nx, ny, nx2, ny2;           // Ñ¡¶¨ÇøÓò×ø±ê
+        int             nwidth, nheight;            // Î»Í¼¿í¶ÈºÍ¸ß¶È
+        int             xscrn, yscrn;               // ÆÁÄ»·Ö±æÂÊ
 
         lprect = & m_BoardWinRect;
-        if ( IsRectEmpty(lprect) )        // ç¡®ä¿é€‰å®šåŒºåŸŸä¸ä¸ºç©ºçŸ©å½¢
+        if ( IsRectEmpty(lprect) )        // È·±£Ñ¡¶¨ÇøÓò²»Îª¿Õ¾ØĞÎ
              return NULL;
 
         if(m_hWndBoard == NULL)
@@ -1941,17 +1941,17 @@ HBITMAP  Cqishou::GetBMPBoard()       //  hbitmap copyscreentobitmap(lprect lpre
              return NULL;
         }
 
-        hscrdc = GetDC(m_hWndBoard);   //ä¸ºwindowåˆ›å»ºè®¾å¤‡æè¿°è¡¨
-        hmemdc = CreateCompatibleDC(hscrdc);    //ä¸ºwindowè®¾å¤‡æè¿°è¡¨åˆ›å»ºå…¼å®¹çš„å†…å­˜è®¾å¤‡æè¿°è¡¨
+        hscrdc = GetDC(m_hWndBoard);   //Îªwindow´´½¨Éè±¸ÃèÊö±í
+        hmemdc = CreateCompatibleDC(hscrdc);    //ÎªwindowÉè±¸ÃèÊö±í´´½¨¼æÈİµÄÄÚ´æÉè±¸ÃèÊö±í
 
-        nx = lprect->left;                      // è·å¾—é€‰å®šåŒºåŸŸåæ ‡
+        nx = lprect->left;                      // »ñµÃÑ¡¶¨ÇøÓò×ø±ê
         ny = lprect->top;
         nx2 = lprect->right;
         ny2 = lprect->bottom;
-        // è·å¾—å±å¹•åˆ†è¾¨ç‡
+        // »ñµÃÆÁÄ»·Ö±æÂÊ
         xscrn = GetDeviceCaps(hscrdc, HORZRES );
         yscrn = GetDeviceCaps(hscrdc, VERTRES );
-        //ç¡®ä¿é€‰å®šåŒºåŸŸæ˜¯å¯è§çš„
+        //È·±£Ñ¡¶¨ÇøÓòÊÇ¿É¼ûµÄ
         if (nx <0)
                nx = 0;
         if (ny < 0)
@@ -1963,28 +1963,28 @@ HBITMAP  Cqishou::GetBMPBoard()       //  hbitmap copyscreentobitmap(lprect lpre
         nwidth = nx2 - nx;
         nheight = ny2 - ny;
 
-        hbitmap = CreateCompatibleBitmap(hscrdc, nwidth, nheight);// åˆ›å»ºä¸€ä¸ªä¸å±å¹•è®¾å¤‡æè¿°è¡¨å…¼å®¹çš„ä½å›¾
-        holdbitmap = SelectObject(hmemdc, hbitmap);  // æŠŠæ–°ä½å›¾é€‰åˆ°å†…å­˜è®¾å¤‡æè¿°è¡¨ä¸­
-        BitBlt(hmemdc, 0, 0, nwidth, nheight,hscrdc, 0, 0, SRCCOPY);// æŠŠwindowæ‹·è´åˆ°å†…å­˜
+        hbitmap = CreateCompatibleBitmap(hscrdc, nwidth, nheight);// ´´½¨Ò»¸öÓëÆÁÄ»Éè±¸ÃèÊö±í¼æÈİµÄÎ»Í¼
+        holdbitmap = SelectObject(hmemdc, hbitmap);  // °ÑĞÂÎ»Í¼Ñ¡µ½ÄÚ´æÉè±¸ÃèÊö±íÖĞ
+        BitBlt(hmemdc, 0, 0, nwidth, nheight,hscrdc, 0, 0, SRCCOPY);// °Ñwindow¿½±´µ½ÄÚ´æ
 
-        hbitmap = SelectObject(hmemdc, holdbitmap);  //å¾—åˆ°windowä½å›¾çš„å¥æŸ„
+        hbitmap = SelectObject(hmemdc, holdbitmap);  //µÃµ½windowÎ»Í¼µÄ¾ä±ú
 
-        DeleteDC(hscrdc);     //æ¸…é™¤
+        DeleteDC(hscrdc);     //Çå³ı
         DeleteDC(hmemdc);
 
-//        if (OpenClipboard(m_hWndBoard))    //m_hWndBoardä¸ºç¨‹åºçª—å£å¥æŸ„
+//        if (OpenClipboard(m_hWndBoard))    //m_hWndBoardÎª³ÌĞò´°¿Ú¾ä±ú
 //        {
 //
-//              EmptyClipboard();   //æ¸…ç©ºå‰ªè´´æ¿
+//              EmptyClipboard();   //Çå¿Õ¼ôÌù°å
 //
 //
-//              SetClipboardData( CF_BITMAP, hbitmap);     //æŠŠå±å¹•å†…å®¹ç²˜è´´åˆ°å‰ªè´´æ¿ä¸Š,  hbitmap ä¸ºåˆšæ‰çš„å±å¹•ä½å›¾å¥æŸ„
+//              SetClipboardData( CF_BITMAP, hbitmap);     //°ÑÆÁÄ»ÄÚÈİÕ³Ìùµ½¼ôÌù°åÉÏ,  hbitmap Îª¸Õ²ÅµÄÆÁÄ»Î»Í¼¾ä±ú
 //
-//              CloseClipboard();  //å…³é—­å‰ªè´´æ¿
+//              CloseClipboard();  //¹Ø±Õ¼ôÌù°å
 //        }
 
         m_hbitmap = hbitmap;
-        return hbitmap;       // è¿”å›ä½å›¾å¥æŸ„
+        return hbitmap;       // ·µ»ØÎ»Í¼¾ä±ú
 
 }
 
@@ -1992,47 +1992,47 @@ HBITMAP  Cqishou::GetBMPBoard()       //  hbitmap copyscreentobitmap(lprect lpre
 int savebitmaptofile(hbitmap hbitmap , lpstr lpfilename);
 int savebitmaptofile(hbitmap hbitmap , lpstr lpfilename)
 {
-        //hbitmap ä¸ºåˆšæ‰çš„å±å¹•ä½å›¾å¥æŸ„
-        //lpfilename ä¸ºä½å›¾æ–‡ä»¶å
+        //hbitmap Îª¸Õ²ÅµÄÆÁÄ»Î»Í¼¾ä±ú
+        //lpfilename ÎªÎ»Í¼ÎÄ¼şÃû
 
-        hdc hdc;         //è®¾å¤‡æè¿°è¡¨
+        hdc hdc;         //Éè±¸ÃèÊö±í
 
-        int ibits;        //å½“å‰æ˜¾ç¤ºåˆ†è¾¨ç‡ä¸‹æ¯ä¸ªåƒç´ æ‰€å å­—èŠ‚æ•°
+        int ibits;        //µ±Ç°ÏÔÊ¾·Ö±æÂÊÏÂÃ¿¸öÏñËØËùÕ¼×Ö½ÚÊı
 
-        word wbitcount;    //ä½å›¾ä¸­æ¯ä¸ªåƒç´ æ‰€å å­—èŠ‚æ•°
+        word wbitcount;    //Î»Í¼ÖĞÃ¿¸öÏñËØËùÕ¼×Ö½ÚÊı
 
-        //å®šä¹‰è°ƒè‰²æ¿å¤§å°ï¼Œ ä½å›¾ä¸­åƒç´ å­—èŠ‚å¤§å° ï¼Œä½å›¾æ–‡ä»¶å¤§å° ï¼Œ å†™å…¥æ–‡ä»¶å­—èŠ‚æ•°
+        //¶¨Òåµ÷É«°å´óĞ¡£¬ Î»Í¼ÖĞÏñËØ×Ö½Ú´óĞ¡ £¬Î»Í¼ÎÄ¼ş´óĞ¡ £¬ Ğ´ÈëÎÄ¼ş×Ö½ÚÊı
         dword dwpalettesize=0, dwbmbitssize, dwdibsize, dwwritten;
-        bitmap bitmap;      //ä½å›¾å±æ€§ç»“æ„
+        bitmap bitmap;      //Î»Í¼ÊôĞÔ½á¹¹
 
-        bitmapfileheader bmfhdr;     //ä½å›¾æ–‡ä»¶å¤´ç»“æ„
+        bitmapfileheader bmfhdr;     //Î»Í¼ÎÄ¼şÍ·½á¹¹
 
-        bitmapinfoheader bi;         //ä½å›¾ä¿¡æ¯å¤´ç»“æ„
+        bitmapinfoheader bi;         //Î»Í¼ĞÅÏ¢Í·½á¹¹
 
-        lpbitmapinfoheader lpbi;     //æŒ‡å‘ä½å›¾ä¿¡æ¯å¤´ç»“æ„
+        lpbitmapinfoheader lpbi;     //Ö¸ÏòÎ»Í¼ĞÅÏ¢Í·½á¹¹
 
-        handle fh, hdib, hpal,holdpal=null;    //å®šä¹‰æ–‡ä»¶ï¼Œåˆ†é…å†…å­˜å¥æŸ„ï¼Œè°ƒè‰²æ¿å¥æŸ„
+        handle fh, hdib, hpal,holdpal=null;    //¶¨ÒåÎÄ¼ş£¬·ÖÅäÄÚ´æ¾ä±ú£¬µ÷É«°å¾ä±ú
 
 
-        //è®¡ç®—ä½å›¾æ–‡ä»¶æ¯ä¸ªåƒç´ æ‰€å å­—èŠ‚æ•°
+        //¼ÆËãÎ»Í¼ÎÄ¼şÃ¿¸öÏñËØËùÕ¼×Ö½ÚÊı
         hdc = createdc("display",null,null,null);
         ibits = getdevicecaps(hdc, bitspixel) *
         getdevicecaps(hdc, planes);
         deletedc(hdc);
-        if (ibits ã€ˆ = 1)
+        if (ibits ¡´ = 1)
         wbitcount = 1;
-        else if (ibits ã€ˆ = 4)
+        else if (ibits ¡´ = 4)
         wbitcount = 4;
-        else if (ibits ã€ˆ = 8)
+        else if (ibits ¡´ = 8)
         wbitcount = 8;
-        else if (ibits ã€ˆ = 24)
+        else if (ibits ¡´ = 24)
         wbitcount = 24;
-        //è®¡ç®—è°ƒè‰²æ¿å¤§å°
-        if (wbitcount ã€ˆ = 8)
-        dwpalettesize = (1 ã€ˆ ã€ˆ wbitcount) *
+        //¼ÆËãµ÷É«°å´óĞ¡
+        if (wbitcount ¡´ = 8)
+        dwpalettesize = (1 ¡´ ¡´ wbitcount) *
         sizeof(rgbquad);
 
-        //è®¾ç½®ä½å›¾ä¿¡æ¯å¤´ç»“æ„
+        //ÉèÖÃÎ»Í¼ĞÅÏ¢Í·½á¹¹
         getobject(hbitmap, sizeof(bitmap), (lpstr)&bitmap);
         bi.bisize = sizeof(bitmapinfoheader);
         bi.biwidth = bitmap.bmwidth;
@@ -2049,12 +2049,12 @@ int savebitmaptofile(hbitmap hbitmap , lpstr lpfilename)
         dwbmbitssize = ((bitmap.bmwidth *
         wbitcount+31)/32)* 4
         *bitmap.bmheight ;
-        //ä¸ºä½å›¾å†…å®¹åˆ†é…å†…å­˜
+        //ÎªÎ»Í¼ÄÚÈİ·ÖÅäÄÚ´æ
         hdib = globalalloc(ghnd,dwbmbitssize+
         dwpalettesize+sizeof(bitmapinfoheader));
         lpbi = (lpbitmapinfoheader)globallock(hdib);
         *lpbi = bi;
-        // å¤„ç†è°ƒè‰²æ¿
+        // ´¦Àíµ÷É«°å
         hpal = getstockobject(default_palette);
         if (hpal)
         {
@@ -2062,27 +2062,27 @@ int savebitmaptofile(hbitmap hbitmap , lpstr lpfilename)
         holdpal = selectpalette(hdc, hpal, false);
         realizepalette(hdc);
         }
-        // è·å–è¯¥è°ƒè‰²æ¿ä¸‹æ–°çš„åƒç´ å€¼
+        // »ñÈ¡¸Ãµ÷É«°åÏÂĞÂµÄÏñËØÖµ
         getdibits(hdc, hbitmap, 0, (uint) bitmap.bmheight,
         (lpstr)lpbi + sizeof(bitmapinfoheader)
         +dwpalettesize,
         (bitmapinfoheader *)
         lpbi, dib_rgb_colors);
-        //æ¢å¤è°ƒè‰²æ¿
+        //»Ö¸´µ÷É«°å
         if (holdpal)
         {
         selectpalette(hdc, holdpal, true);
         realizepalette(hdc);
         releasedc(null, hdc);
         }
-        //åˆ›å»ºä½å›¾æ–‡ä»¶
+        //´´½¨Î»Í¼ÎÄ¼ş
         fh = createfile(lpfilename, generic_write,
         0, null, create_always,
         file_attribute_normal | file_
         flag_sequential_scan, null);
         if (fh == invalid_handle_value)
         return false;
-        // è®¾ç½®ä½å›¾æ–‡ä»¶å¤´
+        // ÉèÖÃÎ»Í¼ÎÄ¼şÍ·
         bmfhdr.bftype = 0x4d42; // "bm"
         dwdibsize = sizeof(bitmapfileheader)
         + sizeof(bitmapinfoheader)
@@ -2094,13 +2094,13 @@ int savebitmaptofile(hbitmap hbitmap , lpstr lpfilename)
         (bitmapfileheader)
         + (dword)sizeof(bitmapinfoheader)
         + dwpalettesize;
-        // å†™å…¥ä½å›¾æ–‡ä»¶å¤´
+        // Ğ´ÈëÎ»Í¼ÎÄ¼şÍ·
         writefile(fh, (lpstr)&bmfhdr, sizeof
         (bitmapfileheader), &dwwritten, null);
-        // å†™å…¥ä½å›¾æ–‡ä»¶å…¶ä½™å†…å®¹
+        // Ğ´ÈëÎ»Í¼ÎÄ¼şÆäÓàÄÚÈİ
         writefile(fh, (lpstr)lpbi, dwdibsize,
         &dwwritten, null);
-        //æ¸…é™¤
+        //Çå³ı
         globalunlock(hdib);
         globalfree(hdib);
         closehandle(fh);
@@ -2112,8 +2112,8 @@ int savebitmaptofile(hbitmap hbitmap , lpstr lpfilename)
 
 
 //---------------------------------------------------------------------------
-// è¯»å–ListViewä¸­çš„Item
-// hWindowä¸ºç›®æ ‡ListViewçš„å¥æŸ„
+// ¶ÁÈ¡ListViewÖĞµÄItem
+// hWindowÎªÄ¿±êListViewµÄ¾ä±ú
 //---------------------------------------------------------------------------
 char* Cnewqiju::MyGetListViewItem(Cqishou * player)
 {
@@ -2129,12 +2129,12 @@ char* Cnewqiju::MyGetListViewItem(Cqishou * player)
 
     GetWindowThreadProcessId(hWindow,&dwProcessID);
     hProcess=OpenProcess(PROCESS_ALL_ACCESS,FALSE,dwProcessID);
-    if(!hProcess)  //å¾—ä¸åˆ°æŒ‡å®šè¿›ç¨‹çš„å¥æŸ„
+    if(!hProcess)  //µÃ²»µ½Ö¸¶¨½ø³ÌµÄ¾ä±ú
         return NULL;
-    //åœ¨æŒ‡å®šè¿›ç¨‹å†…åˆ†é…å­˜å‚¨ç©ºé—´
+    //ÔÚÖ¸¶¨½ø³ÌÄÚ·ÖÅä´æ´¢¿Õ¼ä
     LPVOID lpTextRemote=VirtualAllocEx(hProcess,NULL,nMaxLen+1,MEM_COMMIT,PAGE_READWRITE);
     LPVOID lpListItemRemote=VirtualAllocEx(hProcess,NULL,sizeof(LVITEM),MEM_COMMIT,PAGE_READWRITE);
-    if((!lpTextRemote) || (!lpListItemRemote)) //ä¸èƒ½åœ¨æŒ‡å®šè¿›ç¨‹å†…åˆ†é…å­˜å‚¨ç©ºé—´
+    if((!lpTextRemote) || (!lpListItemRemote)) //²»ÄÜÔÚÖ¸¶¨½ø³ÌÄÚ·ÖÅä´æ´¢¿Õ¼ä
         return NULL;
 
     long time ;
@@ -2149,7 +2149,7 @@ char* Cnewqiju::MyGetListViewItem(Cqishou * player)
 
     ZeroMemory(szBuf,nMaxLen+1);
     bWriteOK= WriteProcessMemory(hProcess,lpTextRemote,(LPVOID)szBuf,nMaxLen+1,(LPDWORD)&dwBytesWrite);
-    if(!bWriteOK) //å†™å†…å­˜é”™è¯¯
+    if(!bWriteOK) //Ğ´ÄÚ´æ´íÎó
     {
         return NULL;
     }
@@ -2169,23 +2169,23 @@ char* Cnewqiju::MyGetListViewItem(Cqishou * player)
     dwBytesWrite=0;
 
     bWriteOK=WriteProcessMemory(hProcess,lpListItemRemote,(LPVOID)&lvItemLocal,sizeof(LVITEM),(LPDWORD)&dwBytesWrite);
-    if(!bWriteOK) //å†™å†…å­˜é”™è¯¯
+    if(!bWriteOK) //Ğ´ÄÚ´æ´íÎó
     {
         return NULL ;
     }
     SendMessage(hWindow,LVM_GETITEMTEXT,(WPARAM) nLVItemCount-1,(LPARAM)lpListItemRemote);
     bSuccess=ReadProcessMemory(hProcess,lpTextRemote,szBuf,nMaxLen+1,&dwBytesRead);
-    //ä»æŒ‡å®šè¿›ç¨‹å­˜å‚¨ç©ºé—´è¯»å–æ–‡æœ¬
-    if(!bSuccess) //ä¸èƒ½åœ¨æŒ‡å®šè¿›ç¨‹å†…è¯»å–æ–‡æœ¬
+    //´ÓÖ¸¶¨½ø³Ì´æ´¢¿Õ¼ä¶ÁÈ¡ÎÄ±¾
+    if(!bSuccess) //²»ÄÜÔÚÖ¸¶¨½ø³ÌÄÚ¶ÁÈ¡ÎÄ±¾
     {
         return NULL ;
     }
 
 
-    //åœ¨æŒ‡å®šè¿›ç¨‹å†…é‡Šæ”¾å­˜å‚¨ç©ºé—´
+    //ÔÚÖ¸¶¨½ø³ÌÄÚÊÍ·Å´æ´¢¿Õ¼ä
     VirtualFreeEx(hProcess,lpListItemRemote,0,MEM_RELEASE);
     VirtualFreeEx(hProcess,lpTextRemote,0,MEM_RELEASE);
-    //å…³é—­æŒ‡å®šè¿›ç¨‹å¥æŸ„
+    //¹Ø±ÕÖ¸¶¨½ø³Ì¾ä±ú
     CloseHandle(hProcess);
     return szBuf;
 }
@@ -2200,7 +2200,7 @@ char*  Cnewqiju::CopyJuMian(BYTE position[10][9] , bool RedGo )
         memset(FenStr,0,2000);
 	strcpy(FenStr, "");
         char * lines="/";
-	// ä¿å­˜æ£‹ç›˜
+	// ±£´æÆåÅÌ
         int m =0;
 	for(int i=0; i<10;  i++)
         {
