@@ -177,4 +177,3 @@ bool PipeStruct::LineInput(char *szLineStr)
       }
 }
 
-
