@@ -1,3 +1,4 @@
+//PieceType
 #define NOCHESS 0    //没有棋子
 #define B_KING       1  //黑帅
 #define B_CAR        2  //黑车
@@ -6,8 +7,6 @@
 #define B_BISHOP     5  //黑士
 #define B_ELEPHANT   6  //黑象
 #define B_PAWN       7  //黑卒
-#define B_BEGIN      B_KING
-#define B_END        B_PAWN
 #define R_KING       8   //红帅
 #define R_CAR        9   //红车
 #define R_HORSE      10  //红马
@@ -15,28 +14,60 @@
 #define R_BISHOP     12  //红士
 #define R_ELEPHANT   13  //红象
 #define R_PAWN       14  //红兵
+#define B_BEGIN      B_KING
+#define B_END        B_PAWN
+
+//PieceID
+#define B_PAWN1       1  //黑卒
+#define B_PAWN2       2  //黑卒
+#define B_PAWN3       3  //黑卒
+#define B_PAWN4       4 //黑卒
+#define B_PAWN5       5 //黑卒
+#define B_ELEPHANT1   6  //黑象
+#define B_ELEPHANT2   7  //黑象
+#define B_BISHOP1     8  //黑士
+#define B_BISHOP2     9  //黑士
+#define B_CANON1      10  //黑炮
+#define B_CANON2      11  //黑炮
+#define B_HORSE1      12 //黑马
+#define B_HORSE2      13  //黑马
+#define B_CAR1        14 //黑车
+#define B_CAR2        15  //黑车
+#define B_KING1		  16  //黑帅
 #define R_BEGIN      R_KING
 #define R_END        R_PAWN
-#define IsBlack(x)  (x>=B_BEGIN&&x<=B_END)
-#define IsRed(x)        (x>=R_BEGIN&&x<=R_END)
-#define IsSameSide(x,y)  ((IsBlack(x)&&IsBlack(y))||(IsRed(x)&&IsRed(y)))
 
-#define ENGINE_PLAYER           0  //棋步来自于UCCI引擎
-#define BMP_PLAYER              1  //棋步来自于图形客户端
-#define KEYBOARD_PLAYER         2  //棋步来自于鼠标操作
-#define EDIT_PLAYER             3  //棋步来自于文本编辑框里的输入
-#define INTERTNET_PLAYER        4  //棋步来自于网络
-#define VOICE_PLAYER            5  //棋步来自于语音识别
+#define R_PAWN1       17  //红卒
+#define R_PAWN2       18  //红卒
+#define R_PAWN3       19  //红卒
+#define R_PAWN4       20  //红卒
+#define R_PAWN5       21  //红卒
+#define R_ELEPHANT1   22  //红象
+#define R_ELEPHANT2   23  //红象
+#define R_BISHOP1     24  //红士
+#define R_BISHOP2     25  //红士
+#define R_CANON1      26  //红炮
+#define R_CANON2      27  //红炮
+#define R_HORSE1      28  //红马
+#define R_HORSE2      29  //红马
+#define R_CAR1        30  //红车
+#define R_CAR2        31  //红车
+#define R_KING1       32  //红帅
 
-#define MAX_PLAYER_NAME         50 //窗口标题或棋手名称最大长度
-#define THRESHOLD               100//相似度阈值
-#define COLORBITSCOUNT          8  //颜色位数
+#define ISBLACK(x)  (x>=B_BEGIN&&x<=B_END)
+#define ISRED(x)        (x>=R_BEGIN&&x<=R_END)
+#define ISSAMESIDE(x,y)  ((ISBLACK(x)&&ISBLACK(y))||(ISRED(x)&&ISRED(y)))
 
-typedef struct _chessmanposition
-{
-	long x;
-	long y;
-}CHESSMANPOS;    //约定棋盘左上角为（0,0）
+//
+//typedef struct _chessmove
+//{
+//	short	  	ChessID;
+//	POINT	From;
+//	POINT	To;
+//	int             Score;
+//    short           KillID;
+//}CHESSMOVE;
+
 //        黑棋在上，原始状态下，黑马2进3表示如下：
 //        CHESSMOVE mv;
 //        mv.ChessID=B_HORSE;
@@ -44,12 +75,3 @@ typedef struct _chessmanposition
 //        mv.From.y=0;
 //        mv.To.x=2;
 //        mv.To.y=2;
-
-typedef struct _chessmove
-{
-	short	  	ChessID;
-	CHESSMANPOS	From;
-	CHESSMANPOS	To;
-	int             Score;
-    short           KillID;
-}CHESSMOVE;

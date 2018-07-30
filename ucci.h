@@ -37,18 +37,20 @@ class   CUcci
       CUcci();
       ~CUcci();
 
-      bool LoadEngine(void);      // 加载ＵＣＣＩ引擎
+      bool LoadEngine(void);		// 加载ＵＣＣＩ引擎
       bool UnLoadEngine(void);      // 去载ＵＣＣＩ引擎
       void UCCI2Engine( const char * eCommand );   // 给UCCI引擎发送各种指令
-      bool ReceiveUCCI(void);      // UCCI反馈信息的接收过程
+      bool ReceiveUCCI(void);		// UCCI反馈信息的接收过程
 
       char * RunEngine(char * FenStr);   // 给UCCI引擎发送思考指令
       void StopEngine(void);
-
-      int nLevel, nStatus;               // 级别和状态
+	  void set_time(int time){think_time = time;};
+	  void set_depth(int depth){think_depth = depth;};
+      int	nLevel, nStatus;               // 级别和状态
       char  mvPonder[1024];
       char  mvPonderFinished[1024];    // 后台思考的猜测着法和后台思考完成的着法
-      char szLineStr[LINE_INPUT_MAX_CHAR];
+      char	szLineStr[LINE_INPUT_MAX_CHAR];
+	  int model;					//思考模式：0=depth;1=time;
 
 private:
       // UCCI引擎配置信息
@@ -61,7 +63,11 @@ private:
       // 适配器状态选项
       bool bDebug, bUcciOkay, bBgThink; // 是否调试模式，UCCI引擎是否启动，后台思考是否启用
       PipeStruct pipeEngine;
+	  int think_time;				//思考时间
+	  int think_depth;				//思考深度
 };
+
+extern CUcci ucci;
 #endif
 
 
